@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+</head>
+<body>
+<script>
+
+
+function Game(hp, damage1,damage2){
+this.hp = hp;
+this.damage1 = damage1;
+this.damage2 = damage2;
+this.counter = function(){
+  return this.hp =this.hp - this.damage1;
+}
+}
+let player1 = new Game(100,30,30);
+let player2 = new Game(100,30,30);
+
+while(player2.hp>1||player1.hp>1){
+ let move1 = prompt("Player1 enter 1-damage head,2-damage body");
+let defense2 = prompt("Player2 enter 1-defense head,2-defense body");
+
+if(move1==defense2){
+  alert("block")
+
+}else{
+  player2.counter();
+alert("30dmg");
+if(player2.hp<1||player1.hp<1) break;
+
+console.log("Player2hp "+player2.hp);
+console.log("Player1hp "+player1.hp);
+}
+let move2 = prompt("Player2 enter 1-damage head,2-damage body");
+let defense1 = prompt("Player1 enter 1-defense head,2-defense body");
+if(move2==defense1){
+  alert("block")
+
+}else{
+  player1.counter();
+alert("30dmg");
+
+console.log("Player2hp "+player2.hp);
+console.log("Player1hp "+player1.hp);
+}
+}
+ 
+
+
+if(player1.hp>player2.hp){
+  alert("Player1 WIN!!!")
+}else{
+  alert("Player2 WIN!!!")
+}
+console.log("Player2hp "+player2.hp);
+console.log("Player1hp "+player1.hp);
+</script>
+</body>
+</html>
